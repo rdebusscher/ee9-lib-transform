@@ -110,6 +110,12 @@
                 <artifactId>microprofile-health-api</artifactId>
                 <version>${health-version}</version>
                 <classifier>jakarta</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.enterprise</groupId>
+                        <artifactId>cdi-api</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.microprofile.metrics</groupId>
@@ -134,6 +140,12 @@
                 <artifactId>microprofile-rest-client-api</artifactId>
                 <version>${rest-client-version}</version>
                 <classifier>jakarta</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.inject</groupId>
+                        <artifactId>javax.inject</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.microprofile.opentracing</groupId>
