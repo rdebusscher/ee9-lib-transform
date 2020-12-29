@@ -63,6 +63,14 @@ with
 
 NOTE: Not all transient dependencies are filtered out correctly in this first beta release.
 
+## Geronimo Config
+
+[Geronimo Config](https://github.com/apache/geronimo-config/tree/trunk/impl) is a MicroProfile Config 1.4 implementation that can be used with Java SE and used in the examples of [Atbash Config](https://github.com/atbashEE/atbash-config/tree/jakarta). 
+
+
+The `geronimo-config-transformer` directory contains a Maven project contains the Main class `be.rubus.payara.ee9.transform.GeronimoConfig`. It creates a `jakarta` version of the `org.apache.geronimo.config:geronimo-config-impl:1.2.2` dependency in your local maven repository.
+
+
 ## PrimeFaces
 
 Primefaces will have a specific version for jakarta soon as of version 9.0 and is currently available from jitpack in a SNAPSHOT version.
