@@ -14,7 +14,7 @@ It requires the `M2_HOME` environment variable set and search for the _settings.
 
 The transformed jar files are written in the sam directory with the addition of the `jakarta` classifier.
 
-From within the `transformer` directory, perform the 
+From within the `transformer` directory, perform the
 
     mvn clean install
 
@@ -50,7 +50,7 @@ The `pom.xml` is located in the directory `microprofile` and once this is instal
         </dependency>
 
 
-with 
+with
 
         <dependency>
             <groupId>org.eclipse.microprofile</groupId>
@@ -65,15 +65,77 @@ NOTE: Not all transient dependencies are filtered out correctly in this first be
 
 ## Geronimo Config
 
-[Geronimo Config](https://github.com/apache/geronimo-config/tree/trunk/impl) is a MicroProfile Config 1.4 implementation that can be used with Java SE and used in the examples of [Atbash Config](https://github.com/atbashEE/atbash-config/tree/jakarta). 
+[Geronimo Config](https://github.com/apache/geronimo-config/tree/trunk/impl) is a MicroProfile Config 1.4 implementation that can be used with Java SE and used in the examples of [Atbash Config](https://github.com/atbashEE/atbash-config/tree/jakarta).
 
 
 The `geronimo-config-transformer` directory contains a Maven project contains the Main class `be.rubus.payara.ee9.transform.GeronimoConfig`. It creates a `jakarta` version of the `org.apache.geronimo.config:geronimo-config-impl:1.2.2` dependency in your local maven repository.
 
 
+## DeltaSpike
+
+[DeltaSpike](https://github.com/apache/deltaspike) is an important library when developing Web Applications with Java EE and Jakarta EE.  It has many modules and several dependencies to other modules. This means that various new transformed JAR files and new POM files need to b created.
+
+Within the `deltaspike-transformer` directory, a Maven project can be found that converts several JAR files to the Jakarta namespace by executing the class `be.rubus.payara.ee9.transform.Deltaspike`.
+
+The `deltaspike-pom` directory contains a Maven project that creates appropriate POM files for the new converted JAR files.
+
+Some use cases on how to use it:
+
+When using just the core module
+
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-api</artifactId>
+            <version>1.8.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-impl</artifactId>
+            <version>1.8.1</version>
+            <scope>runtime</scope>
+        </dependency>
+
+can be replaced with
+
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-api</artifactId>
+            <version>1.8.1</version>
+            <classifier>jakarta</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-jakarta-core-impl</artifactId>
+            <version>1.8.1</version>
+            <type>pom</type>
+            <scope>runtime</scope>
+        </dependency>
+
+The difference is the `<type>` or addition of the `<classifier>` and the changed `artifactId`.
+
+And when using the JSF module the following dependencies can be defined for the Jakarta version:
+
+        <dependency>
+            <groupId>org.apache.deltaspike.modules</groupId>
+            <artifactId>deltaspike-jakarta-jsf-api</artifactId>
+            <version>1.8.1</version>
+            <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.deltaspike.modules</groupId>
+            <artifactId>deltaspike-jakarta-jsf-impl</artifactId>
+            <version>1.8.1</version>
+            <type>pom</type>
+            <scope>runtime</scope>
+        </dependency>
+
+
 ## PrimeFaces
 
-Primefaces will have a specific version for jakarta soon as of version 9.0 and is currently available from jitpack in a SNAPSHOT version.
+Primefaces will have a specific version for Jakarta soon as of version 9.0 and is currently available from jitpack in a SNAPSHOT version.
 
      <dependency>
          <groupId>com.github.primefaces</groupId>
@@ -88,6 +150,3 @@ Primefaces will have a specific version for jakarta soon as of version 9.0 and i
  	         <url>https://jitpack.io</url>
            	</repository>
       </repositories>
-
-
-

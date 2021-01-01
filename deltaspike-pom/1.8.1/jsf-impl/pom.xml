@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.apache.deltaspike.modules</groupId>
+        <artifactId>jakarta-parent</artifactId>
+        <version>1.8.1</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+
+    <artifactId>deltaspike-jakarta-jsf-impl</artifactId>
+    <packaging>pom</packaging>
+    <version>1.8.1</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-api</artifactId>
+            <version>1.8.1</version>
+            <classifier>jakarta</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-impl</artifactId>
+            <version>1.8.1</version>
+            <classifier>jakarta</classifier>
+            <exclusions>
+                <exclusion>
+                    <!-- we need the jakarta transformed one and not the original one that comes through transient dependency. -->
+                    <groupId>org.apache.deltaspike.core</groupId>
+                    <artifactId>deltaspike-core-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.deltaspike.modules</groupId>
+            <artifactId>deltaspike-security-module-api</artifactId>
+            <version>1.8.1</version>
+            <classifier>jakarta</classifier>
+            <exclusions>
+                <exclusion>
+                    <!-- we need the jakarta transformed one and not the original one that comes through transient dependency. -->
+                    <groupId>org.apache.deltaspike.core</groupId>
+                    <artifactId>deltaspike-core-api</artifactId>
+                </exclusion>
+            </exclusions>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.deltaspike.modules</groupId>
+            <artifactId>deltaspike-security-module-impl</artifactId>
+            <version>1.8.1</version>
+            <classifier>jakarta</classifier>
+            <exclusions>
+                <!-- we need the jakarta transformed one and not the original one that comes through transient dependency. -->
+                <exclusion>
+                    <groupId>org.apache.deltaspike.modules</groupId>
+                    <artifactId>deltaspike-security-module-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.deltaspike.core</groupId>
+                    <artifactId>deltaspike-core-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.deltaspike.core</groupId>
+                    <artifactId>deltaspike-core-impl</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.deltaspike.modules</groupId>
+            <artifactId>deltaspike-proxy-module-api</artifactId>
+            <version>1.8.1</version>
+            <classifier>jakarta</classifier>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.deltaspike.core</groupId>
+                    <artifactId>deltaspike-core-api</artifactId>
+                </exclusion>
+            </exclusions>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.deltaspike.modules</groupId>
+            <artifactId>deltaspike-proxy-module-impl-asm5</artifactId>
+            <version>1.8.1</version>
+            <classifier>jakarta</classifier>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.deltaspike.core</groupId>
+                    <artifactId>deltaspike-core-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.deltaspike.modules</groupId>
+                    <artifactId>deltaspike-proxy-module-api</artifactId>
+                </exclusion>
+            </exclusions>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.deltaspike.modules</groupId>
+            <artifactId>deltaspike-jsf-module-api</artifactId>
+            <version>1.8.1</version>
+            <classifier>jakarta</classifier>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.deltaspike.core</groupId>
+                    <artifactId>deltaspike-core-api</artifactId>
+                </exclusion>
+
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.deltaspike.modules</groupId>
+            <artifactId>deltaspike-jsf-module-impl</artifactId>
+            <version>1.8.1</version>
+            <classifier>jakarta</classifier>
+            <exclusions>
+                    <!-- we need the jakarta transformed one and not the original one that comes through transient dependency. -->
+                <exclusion>
+                    <groupId>org.apache.deltaspike.modules</groupId>
+                    <artifactId>deltaspike-security-module-impl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.deltaspike.modules</groupId>
+                    <artifactId>deltaspike-jsf-module-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.deltaspike.modules</groupId>
+                    <artifactId>deltaspike-security-module-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.deltaspike.core</groupId>
+                    <artifactId>deltaspike-core-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.deltaspike.core</groupId>
+                    <artifactId>deltaspike-core-impl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.deltaspike.modules</groupId>
+                    <artifactId>deltaspike-proxy-module-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.deltaspike.modules</groupId>
+                    <artifactId>deltaspike-proxy-module-impl-asm5</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+</project>

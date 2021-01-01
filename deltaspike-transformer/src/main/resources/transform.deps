@@ -1,0 +1,14 @@
+org.apache.deltaspike.core:deltaspike-core-api:1.0.0
+org.apache.deltaspike.core:deltaspike-core-api:1.8.1
+org.apache.deltaspike.core:deltaspike-core-impl:1.8.1
+org.apache.deltaspike.modules:deltaspike-security-module-api:1.0.0
+org.apache.deltaspike.modules:deltaspike-security-module-api:1.8.1
+org.apache.deltaspike.modules:deltaspike-security-module-impl:1.8.1
+org.apache.deltaspike.modules:deltaspike-proxy-module-api:1.8.1
+org.apache.deltaspike.modules:deltaspike-proxy-module-impl:1.8.1
+org.apache.deltaspike.modules:deltaspike-security-module-api:1.8.1
+org.apache.deltaspike.modules:deltaspike-security-module-impl:1.8.1
+org.apache.deltaspike.modules:deltaspike-proxy-module-api:1.8.1
+org.apache.deltaspike.modules:deltaspike-proxy-module-impl-asm5:1.8.1
+org.apache.deltaspike.modules:deltaspike-jsf-module-api:1.8.1
+org.apache.deltaspike.modules:deltaspike-jsf-module-impl:1.8.1
